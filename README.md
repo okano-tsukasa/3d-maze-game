@@ -1,198 +1,198 @@
-# 3D Maze Game
+# 3D迷路ゲーム
 
-A simple first-person 3D maze game built with C and raylib.
+C言語とraylibで作られたシンプルな一人称視点の3D迷路ゲームです。
 
-![Game Screenshot](https://via.placeholder.com/800x600.png?text=3D+Maze+Game+Screenshot)
+![ゲームスクリーンショット](https://via.placeholder.com/800x600.png?text=3D+Maze+Game+Screenshot)
 
-## Overview
+## 概要
 
-This is an educational 3D maze game where you navigate through a maze from a first-person perspective to reach the goal. The game demonstrates basic 3D graphics programming using the raylib library.
+このゲームは、一人称視点で迷路を進んでゴールを目指す教育的な3D迷路ゲームです。raylibライブラリを使用した基本的な3Dグラフィックスプログラミングのデモンストレーションとなっています。
 
-## Features
+## 特徴
 
-- First-person 3D view
-- WASD keyboard controls for movement
-- Mouse controls for camera rotation
-- Goal detection system
-- Simple and clean UI
-- Lightweight (~135KB executable)
+- 一人称視点の3D表示
+- WASDキーによる移動操作
+- マウスによるカメラ回転
+- ゴール到達判定システム
+- シンプルでクリーンなUI
+- 軽量（実行ファイル約135KB）
 
-## Screenshots
+## スクリーンショット
 
 (screenshots/gameplay.png)
 
 
-## Requirements
+## 必要環境
 
-### For Running
+### 実行に必要なもの
 - Windows 10/11
-- OpenGL 3.3 compatible GPU
-- raylib DLL (included with MSYS2 installation)
+- OpenGL 3.3対応GPU
+- raylib DLL（MSYS2インストール時に含まれます）
 
-### For Building
+### ビルドに必要なもの
 - Windows 10/11
 - MSYS2
-- GCC compiler (15.2.0 or later)
-- raylib library
+- GCCコンパイラ（15.2.0以降）
+- raylibライブラリ
 
-## Installation
+## インストール方法
 
-### Option 1: Download Pre-built Binary (Coming Soon)
+### 方法1: ビルド済みバイナリをダウンロード（近日公開予定）
 
-1. Download `maze_game.exe` from the releases page
-2. Double-click to run
+1. releasesページから`maze_game.exe`をダウンロード
+2. ダブルクリックして実行
 
-### Option 2: Build from Source
+### 方法2: ソースからビルド
 
-1. Install MSYS2 from [https://www.msys2.org/](https://www.msys2.org/)
+1. MSYS2をインストール：[https://www.msys2.org/](https://www.msys2.org/)
 
-2. Open MSYS2 UCRT64 terminal and install dependencies:
+2. MSYS2 UCRT64ターミナルを開き、依存関係をインストール：
 ```bash
 pacman -S mingw-w64-ucrt-x86_64-gcc
 pacman -S mingw-w64-ucrt-x86_64-raylib
 ```
 
-3. Clone this repository:
+3. リポジトリをクローン：
 ```bash
 git clone https://github.com/yourusername/3d-maze-game.git
 cd 3d-maze-game
 ```
 
-4. Build the game:
+4. ゲームをビルド：
 ```bash
 gcc -std=c99 -Wall -O2 -I/c/msys64/ucrt64/include \
     -o maze_game.exe src/main.c \
     -L/c/msys64/ucrt64/lib -lraylib -lopengl32 -lgdi32 -lwinmm
 ```
 
-5. Run the game:
+5. ゲームを実行：
 ```bash
 ./maze_game.exe
 ```
 
-## Controls
+## 操作方法
 
-| Key/Action | Function |
-|------------|----------|
-| `W` | Move forward |
-| `S` | Move backward |
-| `A` | Move left |
-| `D` | Move right |
-| `Mouse` | Look around |
-| `ESC` | Exit game |
+| キー/操作 | 機能 |
+|----------|------|
+| `W` | 前進 |
+| `S` | 後退 |
+| `A` | 左移動 |
+| `D` | 右移動 |
+| `マウス` | 視点移動 |
+| `ESC` | ゲーム終了 |
 
-## How to Play
+## 遊び方
 
-1. Launch `maze_game.exe`
-2. Use WASD keys to move through the maze
-3. Use your mouse to look around
-4. Find the green cube (goal) to complete the maze
-5. Press ESC to exit
+1. `maze_game.exe`を起動
+2. WASDキーで迷路内を移動
+3. マウスで周囲を見回す
+4. 緑色の立方体（ゴール）を見つけて迷路をクリア
+5. ESCキーで終了
 
-## Project Structure
+## プロジェクト構成
 
 ```
 3d-maze-game/
 ├── docs/
-│   ├── 要件定義書.txt          # Requirements document
-│   ├── 設計書.txt              # Design document
-│   ├── 動作テスト手順書.txt    # Test procedure
-│   └── テスト結果レポート.txt  # Test results
+│   ├── 要件定義書.txt          # 要件定義ドキュメント
+│   ├── 設計書.txt              # 設計ドキュメント
+│   ├── 動作テスト手順書.txt    # テスト手順
+│   └── テスト結果レポート.txt  # テスト結果
 ├── src/
-│   └── main.c                  # Main source code
-├── tests/                      # Test directory
-├── Makefile                    # Build configuration
-├── README.md                   # This file
-└── LICENSE                     # License file
+│   └── main.c                  # メインソースコード
+├── tests/                      # テストディレクトリ
+├── Makefile                    # ビルド設定
+├── README.md                   # このファイル
+└── LICENSE                     # ライセンスファイル
 
 ```
 
-## Technical Details
+## 技術詳細
 
-- **Language**: C (C99 standard)
-- **Graphics Library**: raylib
-- **Compiler**: GCC
-- **Platform**: Windows (portable to Linux/macOS with minor modifications)
-- **Maze Size**: 10x10 grid
-- **Target FPS**: 60
-- **Window Size**: 800x600 pixels
+- **言語**: C（C99標準）
+- **グラフィックスライブラリ**: raylib
+- **コンパイラ**: GCC
+- **プラットフォーム**: Windows（軽微な変更でLinux/macOSにも移植可能）
+- **迷路サイズ**: 10x10グリッド
+- **目標FPS**: 60
+- **ウィンドウサイズ**: 800x600ピクセル
 
-## Development
+## 開発
 
-### Building with Make
+### Makeでのビルド
 
-If you have `make` installed:
+`make`がインストールされている場合：
 
 ```bash
-make all    # Build the game
-make run    # Build and run
-make clean  # Clean build artifacts
-make help   # Show help
+make all    # ゲームをビルド
+make run    # ビルドして実行
+make clean  # ビルド成果物をクリーンアップ
+make help   # ヘルプを表示
 ```
 
-### Code Structure
+### コード構造
 
-The game is implemented in a single file (`src/main.c`) for simplicity:
+シンプルさのため、ゲームは単一ファイル（`src/main.c`）で実装されています：
 
-- Maze data: 2D integer array (1=wall, 0=path)
-- Camera: First-person view using raylib's Camera3D
-- Game loop: Standard init-update-draw pattern
-- Goal detection: Distance-based calculation
+- 迷路データ: 2次元整数配列（1=壁、0=通路）
+- カメラ: raylibのCamera3Dを使用した一人称視点
+- ゲームループ: 標準的な初期化-更新-描画パターン
+- ゴール判定: 距離ベースの計算
 
-## Known Limitations
+## 既知の制約事項
 
-- Collision detection is simplified (may pass through walls)
-- Mouse sensitivity is fixed
-- Single maze layout (no level selection)
-- No sound effects
+- 衝突判定が簡易実装（壁を通り抜けることがあります）
+- マウス感度が固定
+- 単一の迷路レイアウト（レベル選択なし）
+- サウンドエフェクトなし
 
-## Future Enhancements
+## 今後の改善案
 
-- [ ] Improved collision detection
-- [ ] Multiple maze levels
-- [ ] Adjustable mouse sensitivity
-- [ ] Timer and score system
-- [ ] Sound effects
-- [ ] Minimap display
-- [ ] External maze file loading
+- [ ] 衝突判定の改善
+- [ ] 複数の迷路レベル
+- [ ] マウス感度の調整機能
+- [ ] タイマーとスコアシステム
+- [ ] サウンドエフェクト
+- [ ] ミニマップ表示
+- [ ] 外部迷路ファイルの読み込み
 
-## Contributing
+## コントリビューション
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+コントリビューションを歓迎します！IssueやPull Requestをお気軽に送ってください。
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. リポジトリをフォーク
+2. フィーチャーブランチを作成（`git checkout -b feature/AmazingFeature`）
+3. 変更をコミット（`git commit -m 'Add some AmazingFeature'`）
+4. ブランチにプッシュ（`git push origin feature/AmazingFeature`）
+5. Pull Requestを開く
 
-## License
+## ライセンス
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+このプロジェクトはMITライセンスの下で公開されています。詳細は[LICENSE](LICENSE)ファイルをご覧ください。
 
-## Acknowledgments
+## 謝辞
 
-- [raylib](https://www.raylib.com/) - Amazing game development library
-- [MSYS2](https://www.msys2.org/) - Development environment
+- [raylib](https://www.raylib.com/) - 素晴らしいゲーム開発ライブラリ
+- [MSYS2](https://www.msys2.org/) - 開発環境
 
-## Author
+## 作者
 
-Created with Claude Code
+Claude Codeで作成
 
-## Support
+## サポート
 
-If you encounter any issues or have questions:
-- Open an issue on GitHub
-- Check the documentation in the `docs/` folder
+問題が発生した場合や質問がある場合：
+- GitHubでIssueを開く
+- `docs/`フォルダ内のドキュメントを確認
 
-## Changelog
+## 変更履歴
 
-### Version 1.0 (2025-11-20)
-- Initial release
-- Basic 3D maze navigation
-- First-person controls
-- Goal detection system
+### バージョン 1.0（2025-11-20）
+- 初回リリース
+- 基本的な3D迷路ナビゲーション
+- 一人称視点操作
+- ゴール到達判定システム
 
 ---
 
-**Enjoy the maze!**
+**迷路を楽しんでください！**
