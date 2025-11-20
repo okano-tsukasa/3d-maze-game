@@ -19,7 +19,8 @@ This is an educational 3D maze game where you navigate through a maze from a fir
 
 ## Screenshots
 
-*Add your screenshots here after running the game*
+(screenshots/gameplay.png)
+
 
 ## Requirements
 
