@@ -1,0 +1,48 @@
+# Compiled executables
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+
+# Build directories
+build/
+bin/
+obj/
+
+# Compiler-generated files
+*.d
+*.dep
+
+# Debug files
+*.pdb
+*.ilk
+
+# Libraries
+*.lib
+*.a
+*.so
+*.dylib
+*.dll
+
+# Editor and IDE files
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS-specific files
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# MSYS2 specific
+*.stackdump
